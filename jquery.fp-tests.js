@@ -70,3 +70,7 @@ test("jQuery.fp.takeWhile", function() {
 test("jQuery.fp.dropWhile", function() {
     same($(testArray).dropWhile(function() { return this > 25 }), Array(30,40), "Drops items until predicate matches");
 });
+
+test("jQuery.fp.groupBy", function() {
+    same($(testArray).groupBy(function() { return this % 20 }), {0: Array(20,40), 10: Array(10,30)}, "Groups items by given function");
+});

@@ -46,6 +46,20 @@
                 }
              }
              return ret;
+	},
+        groupBy: function(func) {
+             var ret = {};
+             for(var index in this.get()) {
+                var item = this.get(index);             
+                var group = func.call(item);
+                var elems = ret[group];
+                if (elems == null) {
+                    ret[group] = [item];
+                } else {
+                    ret[group].push(item);
+                }
+             }
+             return ret;
         }
     });
 })(jQuery);
