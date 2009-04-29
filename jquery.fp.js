@@ -20,7 +20,7 @@
         reverse: [].reverse,
         head: function() { return this.get(0); },
         tail: function() { return this.slice(1); },
-        exists: function(func) { return this.filter(func).size()>0; },
+        exists: function(func) { return this.filter(func).size() > 0; },
         forall: function(func) { return this.filter(func).size() == this.size(); },
         take: function(count) { return this.slice(0, count).get(); }, 
         drop: function(first) { return this.slice(first).get(); },
