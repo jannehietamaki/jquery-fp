@@ -74,3 +74,7 @@ test("jQuery.fp.dropWhile", function() {
 test("jQuery.fp.groupBy", function() {
     same($(testArray).groupBy(function() { return this % 20 }), {0: Array(20,40), 10: Array(10,30)}, "Groups items by given function");
 });
+
+test("jQuery.fp.partition", function() {
+    same($(testArray).partition(function() { return this % 20 == 0 }), {true: Array(20,40), false: Array(10,30)}, "Partitions items by given function");
+});

@@ -46,7 +46,7 @@
                 }
              }
              return ret;
-	},
+        },
         groupBy: function(func) {
              var ret = {};
              for(var index in this.get()) {
@@ -60,6 +60,22 @@
                 }
              }
              return ret;
+        },
+        partition: function(pred) {
+             var satisfied = [];
+             var nonSatisfied = [];
+             for(var index in this.get()) {
+                var item = this.get(index);
+                if (pred.call(item)) {
+                    satisfied.push(item);
+                } else {
+                    nonSatisfied.push(item);
+                }
+             }
+             return { 
+		 true: satisfied,
+		 false: nonSatisfied
+             };
         }
     });
 })(jQuery);
