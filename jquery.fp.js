@@ -72,10 +72,7 @@
                     nonSatisfied.push(item);
                 }
              }
-             return { 
-		 true: satisfied,
-		 false: nonSatisfied
-             };
+             return { "true": satisfied, "false": nonSatisfied };
         }
     });
 })(jQuery);
